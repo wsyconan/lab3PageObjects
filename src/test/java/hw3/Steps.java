@@ -183,6 +183,7 @@ public class Steps {
     }
 
     // Now begin Step defines of ex2
+    // Step 5: Click on "Service" subcategory in the header and check that drop down contains options
     @Then("Drop down options of top Service have proper values")
     public void checkTopService() throws InterruptedException {
         page.topService.click();
@@ -190,6 +191,7 @@ public class Steps {
         page.assertTextOfElements(page.topServiceContents, topServiceText);
     }
 
+    // Step 6: Click on Service subcategory in the left section and check that drop down contains options
     @Then("Drop down options of left Service have proper values")
     public void checkLeftService() throws InterruptedException {
         page.leftService.click();
@@ -197,6 +199,7 @@ public class Steps {
         page.assertTextOfElements(page.leftServiceContents, topService);
     }
 
+    // Step 7: Open through the header menu Service -> Different Elements Page
     @Given("Open \"Different Elements\" Page")
     public void openDiffElePage() {
         page.leftSection.click();
@@ -204,6 +207,7 @@ public class Steps {
         page2 = new Page2(webDriver);
     }
 
+    // Step 8: Check interface on Different elements page, it contains all needed elements
     @Then("There are 4 checkboxes")
     public void assertCheckboxes() {
         Assert.assertEquals(page2.getCheckboxNum(), 4);
@@ -224,56 +228,66 @@ public class Steps {
         Assert.assertEquals(page2.getbuttonNum(), 2);
     }
 
+    // Step 9: Assert that there is Right Section
     @Then("Right Section displayed")
     public void assertRightSection() {
         softAssert.assertTrue(page2.rightSection.isDisplayed());
         softAssert.assertAll();
     }
 
+    // Step 10: Assert that there is Left Section
     @And("Left Section displayed")
     public void assertLeftSection() {
         softAssert.assertTrue(page2.rightSection.isDisplayed());
         softAssert.assertAll();
     }
 
+    // Step 11: Select checkboxes
     @Then("Checkboxes {string} and {string} are selected")
     public void selectCheckbox(String str1, String str2) throws InterruptedException {
         page2.clickCheckbox(str1);
         page2.clickCheckbox(str2);
     }
 
+    // Step 12: Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox.
     @And("Status of checkboxes in Log row are displayed and corresponding")
     public void assertCheckboxLog() throws InterruptedException {
         page2.checkInfoPanel(patternWater, 1);
         page2.checkInfoPanel(patternWind, 0);
     }
 
+    // Step 13: Select radio
     @Then("Radio {string} is selected")
     public void selectRadio(String str) {
         page2.clickRadio(str);
     }
 
+    // Step 14: Assert that for radiobutton there is a log row and value is corresponded to the status of radiobutton.
     @And("Status of radios in Log row is displayed and corresponding")
     public void assertRadioLog() throws InterruptedException {
         page2.checkInfoPanel(patternSelen, 0);
     }
 
+    // Step 15: Select in dropdown
     @Then("{string} in dropdown is selected")
     public void selectDropdown(String str) {
         page2.clickDropdown(str);
     }
 
+    // Step 16: Assert that for dropdown there is a log row and value is corresponded to the selected value.
     @And("Status of dropdown in Log row is displayed and corresponding")
     public void assertDropdownLog() {
         page2.checkInfoPanel(patternYellow, 0);
     }
 
+    // Step 17: Unselect and assert checkboxes
     @Then("Checkboxes {string} and {string} are unselected")
     public void unselectCheckbox(String str1, String str2) {
         page2.clickCheckbox(str1);
         page2.clickCheckbox(str2);
     }
 
+    // Step 18: Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox.
     @And("Status of checkboxes are displayed and corresponding")
     public void assertCheckboxLog2() throws InterruptedException {
         Thread.sleep(20000);
