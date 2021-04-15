@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="hw3Suite">
+    <test name="hw3">
+        <parameter name="hw3DataPath" value="Data.properties" />
+        <classes>
+            <class name="hw3.RunTestEx1"></class>
+            <class name="hw3.RunTestEx2"></class>
+        </classes>
+    </test>
+</suite>
