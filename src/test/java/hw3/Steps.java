@@ -290,7 +290,6 @@ public class Steps {
     // Step 18: Assert that for each checkbox there is an individual log row and value is corresponded to the status of checkbox.
     @And("Status of checkboxes are displayed and corresponding")
     public void assertCheckboxLog2() throws InterruptedException {
-        Thread.sleep(20000);
         page2.checkInfoPanel(patternWaterFalse, 1);
         page2.checkInfoPanel(patternWindFalse, 0);
     }
